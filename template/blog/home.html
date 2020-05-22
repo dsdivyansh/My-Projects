@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Responsive Sticky Navbar</title>
+     <link rel="stylesheet" href="{%static 'css/base.css'%}">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+  </head>
+  <div class="wrapper">
+     <header>
+        <nav>
+           <div class="menu-icon">
+              <i class="fa fa-bars fa-2x"></i>
+           </div>
+           <div class="logo">
+              BLOGGING
+           </div>
+           <div class="menu">
+              <ul>
+                 <li><a href="/home">Home</a></li>
+                 <li><a href="/PostBlog">PostBlog</a></li>
+                 <li><a href="/Viewasblog">Viewasblog</a></li>
+                 <!-- <li><a href="#">My Blog</a></li> -->
+                 <li><a href="/my_post">My Post</a></li>
+                 <!-- <li><a href="#">Contact</a></li> -->
+
+
+                {% if request.user.is_authenticated is False %}
+                <li><a href="/SignupForm"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                {%endif%}
+                {% if request.user.is_authenticated is False %}
+                <li><a href="/accounts/login">Login</a></li>
+                {%endif%}
+                {% if request.user.is_authenticated is True %}
+                  <li><a> Welcome, {{user.get_username}}</a></li>
+
+                <li><a href="/accounts/logout">Logout</a></li>
+
+                {% else %}
+              {% endif %}
+              <br>
+              <br>
+              <br>
+              <br>
+              <div class="container" align='center'>
+                <h1>“Blogging is a conversation, not a code.”</h1>
+
+              </div>
+
+
+              </ul>
+           </div>
+        </nav>
+        <br>
+        <br><br>
+        <br>
+
+     </header>
+
+    <br><br>
+    <script type="text/javascript">
+      $(document).ready(function() {
+         $(".menu-icon").on("click", function() {
+               $("nav ul").toggleClass("showing");
+         });
+   });
+
+   // Scrolling Effect
+
+   $(window).on("scroll", function() {
+         if($(window).scrollTop()) {
+               $('nav').addClass('black');
+         }
+
+         else {
+               $('nav').removeClass('black');
+         }
+   })
+   </script>
+
+
+  </body>
+</html>

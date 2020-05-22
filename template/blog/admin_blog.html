@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+{%load static%}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{%load static%}<link rel="stylesheet" href="{% static 'css/admin_blog.css'%}">
+<style>
+ {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: ;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 40px;
+  font-size: 40px;
+  text-align: center;
+  background:black ;
+  color:white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+img {
+  background-color: #aaa;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+</style>
+</head>
+<body style="background-color:powderblue;">
+
+
+<div class="header">
+  <h2>Bloggify</h2>
+</div>
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+<div class="navbar-header">
+  <a class="navbar-brand" href=''>Blogging</a>
+</div>
+<ul class="nav navbar-nav">
+  <li class="active"><a href='/home'>Home</a></li>
+  <li><a href="/PostBlog">Post Blog</a></li>
+  <li><a href="/Viewasblog">View As Blog</a></li>
+  <li><a href="#">My Blog</a></li>
+  <li><a href="/my_post">My Posts</a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+  {% if request.user.is_authenticated is False %}
+  <li><a href="/SignupForm"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+  {%endif%}
+  {% if request.user.is_authenticated is False %}
+  <li><a href="/accounts/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+  {%endif%}
+
+  {% if request.user.is_authenticated is True %}
+  <li><a> Welcome, {{user.get_username}}</a></li>
+  {% endif %}
+  {% if request.user.is_authenticated is True %}
+  <li><a href="/accounts/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+
+
+{% endif %}
+</ul>
+</div>
+</nav>
+
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>Breathing Your Life</h2>
+      <h5>Title description, Dec 7, 2017</h5>
+
+
+
+      <img src="{%static 'image/0.jpg'%}" alt="">
+
+      <p>..</p>
+      <p>Deep breathing helps us to calm our nerves, reduce stress, and lessen anxiety. Breathing well to live better is a cornerstone of physical and mental wellbeing that can reclaim our attention between the hurry and the pressures that we live with. At the same time, something just as interesting is that this type of breathing allows us to connect much better with ourselves, with our basic necessities…
+
+There are many cultures that see the process of breathing as more than just an – apparently – involuntary act that keeps us alive and to which we barely need to pay attention. Many of us form part of that hyperventilating world that suddenly, when it feels the need to practice yoga, Mindfulness, or Tai-Chi becomes conscious that breathing is something much more than just taking in air and pushing it out again.
+
+“I have to remind myself to breathe – almost to remind my heart to beat!”
+
+–Emily Brontë–
+
+In that rhythmic process of expansion and contraction, breathing also represents the constant duality of nature, like day and night, like being awake and sleeping, like the calm and the storm, spring and winter… It is a cycle that has an order and a time, an inner music and incredible benefits if done well.
+
+The majority of us breath quickly and superficially, leaving the capacity of our lungs untapped, as they barely expand. Normally, we breathe 17 or 18 times per minute. However, when we suffer anxiety or stress, that frequency of breathing takes off, and is able to reach even 30 breaths per minute. It is a risk. It’s like living with the sword of Damocles over our head, generating a progressive imbalance that affects our blood pressure, our immune system, and our muscles, including our mind.
+
+Nonetheless, something as simple as “breathing deeply” and doing it with control generates a system-wide benefit, balancing multiple proceses and providing a way our for many of the negative emotions torment us day in and day out.</p>
+    </div>
+    <div class="card">
+      <h2>Nirvana</h2>
+      <h5>Title description, Sep 2, 2017</h5>
+
+      <img src="{%static 'image/u.jpg'%}" alt="">
+      <p>..</p>
+      <p>In Indian religions, nirvana is synonymous with moksha and mukti.All Indian religions assert it to be a state of perfect quietude, freedom, highest happiness as well as the liberation from or ending of samsara, the repeating cycle of birth, life and death.
+
+However, Buddhist and non-Buddhist traditions describe these terms for liberation differently.In the Buddhist context, nirvana refers to realization of non-self and emptiness, marking the end of rebirth by stilling the fires that keep the process of rebirth going.In Hindu philosophy, it is the union of or the realization of the identity of Atman with Brahman, depending on the Hindu tradition. In Jainism, nirvana is also the soteriological goal, representing the release of a soul from karmic bondage and samsara.</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+
+      <img src="{%static 'image/b.jpg'%}" alt="">
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg">Post 1</div><br>
+      <div class="fakeimg">Post 2</div><br>
+      <div class="fakeimg">Post 3</div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+      <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-google"></a>
+        <a href="#" class="fa fa-youtube"></a>
+        <a href="#" class="fa fa-skype"></a>
+        <a href="#" class="fa fa-yahoo"></a>
+
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark">
+
+  <div style="background-color: #6351ce;">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram white-text"> </i>
+          </a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold">Company name</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+          consectetur
+          adipisicing elit.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Products</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">MDBootstrap</a>
+        </p>
+        <p>
+          <a href="#!">MDWordPress</a>
+        </p>
+        <p>
+          <a href="#!">BrandFlow</a>
+        </p>
+        <p>
+          <a href="#!">Bootstrap Angular</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Your Account</a>
+        </p>
+        <p>
+          <a href="#!">Become an Affiliate</a>
+        </p>
+        <p>
+          <a href="#!">Shipping Rates</a>
+        </p>
+        <p>
+          <a href="#!">Help</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+        <p>
+          <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+        <p>
+          <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+        <p>
+          <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+</body>
+</html>
