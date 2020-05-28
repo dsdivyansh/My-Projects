@@ -13,11 +13,7 @@ class post_form(forms.ModelForm):
         model=Post
         fields='__all__'
 
-# class CommentForm(forms.ModelForm):
-#
-#     class Meta:
-#         model = Comment
-#         fields = ('author', 'text')
+
 class CommentForm(forms.ModelForm):
 
     class Meta:
