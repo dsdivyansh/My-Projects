@@ -27,29 +27,6 @@ def post_list_view(request):
 
 
 
-# def post_detail(request):
-#     comments = Comment.objects.filter(approved_comment=True)
-#     new_comment = None
-#     # Comment posted
-#     if request.method == 'POST':
-#         comment_form = CommentForm(data=request.POST)
-#         if comment_form.is_valid():
-#
-#             # Create Comment object but don't save to database yet
-#             new_comment = comment_form.save(commit=False)
-#             # Assign the current post to the comment
-#             new_comment.comments = comments
-#             # Save the comment to the database
-#             new_comment.save()
-#     else:
-#         comment_form = CommentForm()
-#
-#     return render(request,"blog/comment.html", {
-#                                            'comments': comments,
-#                                            'new_comment': new_comment,
-#                                            'comment_form': comment_form})
-
-
 
 def add_comment_to_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -76,9 +53,7 @@ class Post_Detail_Crud(DetailView):
     model=Post
     template_name='blog/Post_Detail_Crud.html'
 
-# def delete_new(request):
-#     return redirect('Post_Detail_Crud.html')
-#     return render(request,'blog/post_confirm_delete.html')
+
 
 
 def logout_view(request):
@@ -96,19 +71,7 @@ class delete_view(DeleteView):
 
     success_url= reverse_lazy('home')
     template_name='blog/post_confirm_delete.html'
-    # post=Post.objects.get(id=id)
-    # post.delete()
-    # return redirect('/home')
-
-# def update_view(request,pk,template_name='blog/update.html'):
-#
-#     pst=Post.objects.get(pk=pk)
-#     if request.method == "POST":
-#         form=post_form(request.POST,instance=pst)
-#         if form.is_valid():
-#             form.save()
-#         return redirect('/')
-#     return render(request,template_name,{'pst':pst})
+   
 
 class update_view(UpdateView):
     model=Post
@@ -116,11 +79,7 @@ class update_view(UpdateView):
     def get_success_url(self):
         request=self.request
         return('/')
-    # success_url=reverse_lazy('/')
-
-# @login_required
-# def Admin_blog(request):
-#     return render(request,'blog/admin_blog.html')
+    
 
 @login_required
 def PostBlog_view(request):
