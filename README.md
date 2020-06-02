@@ -12,7 +12,7 @@ For Database Management SQLite3 has been used.
 - [Contribution](#contribution)
 
 ## Introduction
-This website is platform independent, on which user can create their own account to upload blogs , on this platform multiple users can see their uploaded blogs with publicly adding comment feature.
+WizBlog is platform independent, on which user can create their own account to upload blogs , on this platform multiple users can see their uploaded blogs with publicly  comment adding feature.
 
 For Database management **SQLite3** is used.
 
