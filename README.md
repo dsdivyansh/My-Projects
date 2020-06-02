@@ -17,7 +17,7 @@ This website is platform independent, on which user can create their own account
 For Database management **SQLite3** is used.
 
 
-![alt_text](static/image/ss.jpg)
+![alt_text](static/image/ss1.jpg)
 
 ## Requirements
 - python - version 3.7.4 or above
