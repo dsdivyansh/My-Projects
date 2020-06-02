@@ -1,27 +1,28 @@
-# Blogging
+# WizBlog
 
-This Blogging Website is developed in Django-Python Web App Framework using Atom.
+WizBlog is developed in Django-Python Web App Framework using Atom.
 For Database Management SQLite3 has been used.
 
 # Table Of Content
-- Introduction
-- Requirements
-- Features
-- Installation
-- Setup
-- Contribution
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+- [Features](#features)
+- [Installation](#installation)
+- [Setup](#setup)
+- [Contribution](#contribution)
 
 ## Introduction
-This website is user independent, where a user can make their personel account and can add their blogs.
+This website is platform independent, on which user can create their own account to upload blogs , on this platform multiple users can see their uploaded blogs with publicly adding comment feature.
 
-For Database management SQLite3 is used.
+For Database management **SQLite3** is used.
 
 
+![alt_text](static/image/ss.jpg)
 
 ## Requirements
 - python - version 3.7.4 or above
 - SQLite - version 3
-- For UI - HTML 5, CSS 3, Bootstrap 3.7.1, Javascript   
+- GUI - HTML 5, CSS 3, Bootstrap 3.7.1, Javascript   
 
 ## Features
 1. Login and Sign up for users with complete validations.
@@ -32,8 +33,8 @@ For Database management SQLite3 is used.
 ## Installation
 
 python 3.7
-- Sign up yourself using valid credential
-- Login with your username and password
+- Sign up using valid credential
+- Login with username and password
 
 ## Setup
 1. Install django by typing the following command in command prompt-
@@ -65,5 +66,5 @@ python 3.7
 7. To access site locally- http://127.0.0.1:8000
 
 ## Contribution
-Project was created by Divyansh Shrivastava.
+Project was created by [Divyansh Shrivastava](mailto:contactshrivastava@gmail.com).
  
